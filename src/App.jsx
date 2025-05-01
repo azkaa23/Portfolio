@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Sidebar } from "./components/Sidebar";
 import { HomePage } from "./pages/HomePage";
 import About from "./pages/About";
+import Projects from "./pages/Projects";
+import ProjectsDetail from './pages/ProjectsDetail'; 
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -16,6 +18,8 @@ export default function App() {
             <Routes> 
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/projects/:id" element={<ProjectsDetail />} />
             </Routes>
           </main>
         </div>
