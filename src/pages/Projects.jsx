@@ -7,7 +7,7 @@ const projects = [
     id: 1,
     name: "Kasir System",
     description: "Cashier System built with Laravel and Bootstrap, designed to make cashier management easier.",
-    image: "/public/kasir.png",
+    image: "/kasir.png",
     featured: true,
     tech: ["laravel", "bootstrap"],
   },
