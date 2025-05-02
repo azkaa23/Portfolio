@@ -5,7 +5,8 @@ const projects = [
   {
     id: 1,
     name: "Kasir System",
-    description: "Cashier System built with Laravel and Bootstrap, designed to make cashier management easier.",
+    description:
+      "Cashier System built with Laravel and Bootstrap, designed to make cashier management easier.",
     image: "/kasir.png",
     featured: true,
     tech: ["laravel", "bootstrap"],
@@ -15,7 +16,8 @@ const projects = [
   {
     id: 2,
     name: "dummy",
-    description: "A React Hook for Zustand state management library to simplify hydration.",
+    description:
+      "A React Hook for Zustand state management library to simplify hydration.",
     image: "/images/zustand.png",
     featured: true,
     tech: ["js", "ts"],
@@ -25,8 +27,10 @@ const projects = [
 ];
 
 const techIcons = {
-  laravel: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
-  bootstrap: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+  laravel:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
+  bootstrap:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
   ts: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
   js: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
 };
@@ -37,29 +41,36 @@ export default function ProjectDetail() {
   const project = projects.find((p) => p.id === parseInt(id));
 
   if (!project) {
-    return <div className="text-center mt-10 text-red-500">Project not found</div>;
+    return (
+      <div className="text-center mt-10 text-red-500 dark:text-red-400">
+        Project not found
+      </div>
+    );
   }
 
   return (
-    <div className="min-h-screen w-full bg-white dark:bg-black px-4 py-8 sm:px-6 lg:px-8 transition-all">
-      <div className="max-w-4xl mx-auto lg:ml-72">
+    <div className="w-full max-w-screen-2xl mx-auto px-4 pb-14 overflow-x-hidden">
+      <div className="w-4/5">
         {/* Tombol Back */}
         <button
           onClick={() => navigate(-1)}
-          className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-6 hover:underline"
+          className="flex items-center text-sm text-gray-500 dark:text-gray-700 mb-6 hover:underline"
         >
           <ArrowLeft className="w-4 h-4 mr-1" />
           Back
         </button>
 
         {/* Nama & Deskripsi */}
-        <h1 className="text-2xl sm:text-3xl font-bold mb-2">{project.name}</h1>
-        <p className="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
+        <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
+          {project.name}
+        </h1>
+        <p className="text-gray-700 dark:text-gray-300 mb-4">
+          {project.description}
+        </p>
         <hr className="border-dashed border-gray-300 dark:border-gray-600 mb-4" />
 
         {/* Tech Stack + Links */}
         <div className="flex justify-between items-center flex-wrap mb-8 gap-4">
-          {/* Tech Stack */}
           <div className="flex items-center gap-2 text-sm">
             <span className="text-gray-600 dark:text-gray-400">Tech Stack:</span>
             {project.tech.map((tech) => (
@@ -73,7 +84,6 @@ export default function ProjectDetail() {
             ))}
           </div>
 
-          {/* Source & Demo */}
           <div className="flex items-center gap-4 text-sm text-gray-700 dark:text-gray-300">
             <a
               href={project.source}
@@ -98,11 +108,13 @@ export default function ProjectDetail() {
         </div>
 
         {/* Gambar Project */}
-        <img
-          src={project.image}
-          alt={project.name}
-          className="w-full max-w-full rounded-xl border border-gray-300 dark:border-gray-700 shadow-md object-contain"
-        />
+        <div className="overflow-x-auto">
+          <img
+            src={project.image}
+            alt={project.name}
+            className="w-full max-w-full rounded-xl border border-gray-300 dark:border-gray-700 shadow-md object-contain"
+          />
+        </div>
       </div>
     </div>
   );

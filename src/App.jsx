@@ -14,7 +14,7 @@ export default function App() {
       <Router> 
         <div className="flex min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
           <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} />
-          <main className="flex-1 p-5 h-full text-gray-900 dark:text-white">
+          <main className="flex-1 p-5 h-full text-gray-900 dark:text-white transition-all duration-300 ml-16 md:ml-72">
             <Routes> 
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<About />} />

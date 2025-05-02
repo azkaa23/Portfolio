@@ -31,9 +31,9 @@ const techIcons = {
 export default function Projects() {
   const navigate = useNavigate();
 
-  return (
-    <div className="w-full max-w-screen-xl pb-14 mx-auto space-y-12 px-4 ml-72">
-      <div className="w-3/4 pr-16">
+  return ( 
+    <div className="w-full max-w-screen-xl pb-14 mx-auto space-y-12 px-4 py-4">
+      <div className="w-4/5">
         <h2 className="text-3xl font-bold mb-2">Projects</h2>
         <p className="text-gray-600 dark:text-gray-300 mb-6">
           Showcasing my passion for technology, design, and problem-solving through code.

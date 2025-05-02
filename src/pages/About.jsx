@@ -39,8 +39,8 @@ const tiktokVideos = [
 
 export default function About() {
   return (
-    <div className="w-full max-w-screen-xl pb-14 mx-auto space-y-12 px-4 ml-72">
-      <div className="w-3/4 pr-8">
+    <div className="w-full max-w-screen-xl pb-14 mx-auto space-y-12 px-4 py-4">
+      <div className="w-4/5 pr-5">
         <h1 className="text-2xl font-semibold mb-2">About</h1>
         <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">A short story of me</p>
         <hr className="border-dashed mb-6" />

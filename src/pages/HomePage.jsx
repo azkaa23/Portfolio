@@ -86,8 +86,8 @@ export function HomePage() {
   ];
 
   return (
-    <div className="w-full max-w-screen-2xl pb-14 mx-auto space-y-12 px-4 overflow-x-hidden ml-72">
-    <div className="w-2/3 pr-5">
+    <div className="w-full max-w-screen-2xl pb-14 mx-auto space-y-12 px-4 overflow-x-hidden">
+    <div className="w-4/5">
       {/* Intro */}
       <div className="bg-transparent dark:bg-gray-800 pt-10 rounded-lg max-w-6xl transition">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
