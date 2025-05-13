@@ -13,25 +13,53 @@ const projects = [
   },
   {
     id: 2,
+    name: "Portfolio Website",
+    description: "A personal portfolio website built using React and Tailwind CSS.",
+    image: "/images/portfolio.png",
+    featured: false,
+    tech: ["js"],
+  },
+    
+  {
+    id: 3,
+    name: "SIM PKL",
+    description: "SIMPKL System built with Laravel and Bootstrap,designed to make internship management easier",
+    image: "/simpkl.png",
+    featured: true,
+    tech: ["laravel", "bootstrap"],
+  },
+  {
+    id: 4,
     name: "dummy",
-    description: "A React Hook for Zustand state management library to simplify hydration.",
+    description: "dummy.",
     image: "/images/zustand.png",
     featured: true,
     tech: ["js", "ts"],
   },
+
 ];
 
 const techIcons = {
-  laravel: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
+  asp: "/icons/asp.png",
+  csharp: "/icons/Csharp.png",
+  figma: "/icons/figma.png",
+  github: "/icons/github.png",
+  javascript: "/icons/javascript.png",
+  laravel: "/icons/laravel.png",
+  mede: "/icons/mede.png",
+  mysql: "/icons/mysql.png",
+  oracle: "/icons/oracle.png",
+  php: "/icons/php.png",
+  react: "/icons/react.png",
+  tailwind: "/icons/tailwind.png",
+  wordpress: "/icons/wordpress.png",
   bootstrap: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
-  ts: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-  js: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
 };
 
 export default function Projects() {
   const navigate = useNavigate();
 
-  return ( 
+  return (
     <div className="w-full max-w-screen-xl pb-14 mx-auto space-y-12 px-4 py-4">
       <div className="w-4/5">
         <h2 className="text-3xl font-bold mb-2">Projects</h2>

@@ -4,8 +4,6 @@ export function HomePage() {
   const roles = [
     "Muhamad Azka Mubarok",
     "Software Engineer",
-    "Frontend Developer",
-    "React Enthusiast",
   ];
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
@@ -66,18 +64,6 @@ export function HomePage() {
       img: "/service-web.png",
     },
     {
-      title: "Mobile Development",
-      desc: "Create smooth and cross-platform mobile applications using React Native.",
-      tag: "coding",
-      img: "/service-mobile.png",
-    },
-    {
-      title: "SEO Optimization",
-      desc: "Improve your site visibility with smart SEO strategies.",
-      tag: "marketing",
-      img: "/service-seo.png",
-    },
-    {
       title: "UI/UX Design",
       desc: "Design stunning user experiences.",
       tag: "design",
@@ -97,7 +83,7 @@ export function HomePage() {
               <span className="animate-blink">|</span>
             </h1>
             <ul className="text-sm text-gray-600 dark:text-gray-400 mt-1 flex space-x-8 list-disc pl-4">
-              <li>Remote worker</li>
+              <li>Freelancer</li>
               <li>Based in Bogor</li>
             </ul>
             <p className="mt-4 text-gray-700 dark:text-gray-300 max-w-2xl">

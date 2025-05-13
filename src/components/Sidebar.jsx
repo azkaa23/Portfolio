@@ -23,13 +23,13 @@ export function Sidebar({ darkMode, setDarkMode }) {
   const menus = [
     { icon: Home, label: "Home", to: "/" },
     { icon: Leaf, label: "About", to: "/about" },
-    { icon: Pencil, label: "Blog", to: "/blog" },
+    // { icon: Pencil, label: "Blog", to: "/blog" },
     { icon: Briefcase, label: "Projects", to: "/projects" },
-    { icon: GitBranch, label: "Roadmap", to: "/roadmap" },
-    { icon: LayoutDashboard, label: "Task Board", to: "/tasks" },
-    { icon: MessageCircle, label: "Chat Room", to: "/chat" },
+    // { icon: GitBranch, label: "Roadmap", to: "/roadmap" },
+    // { icon: LayoutDashboard, label: "Task Board", to: "/tasks" },
+    // { icon: MessageCircle, label: "Chat Room", to: "/chat" },
     { icon: Send, label: "Contact", to: "/contact" },
-    { icon: Grid, label: "More", to: "/more" },
+    // { icon: Grid, label: "More", to: "/more" },
   ];
 
   return (

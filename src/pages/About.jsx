@@ -122,8 +122,8 @@ export default function About() {
 
 
       <section className="mt-10 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg dark:shadow-md max-w-4xl">
-  {/* TikTok Profile Header */}
-  <div className="flex flex-col items-center text-center mb-8">
+  {/* TikTok  */}
+  {/* <div className="flex flex-col items-center text-center mb-8">
     <img
       src="/profil.jpg" // Ganti dengan path foto profil kamu
       alt="Profile"
@@ -134,8 +134,6 @@ export default function About() {
       Frontend Dev • React & Laravel • Sharing coding vibes 👨‍💻
     </p>
   </div>
-
-  {/* TikTok Video Grid */}
   <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
     {[
       {
@@ -170,7 +168,7 @@ export default function About() {
         </div>
       </a>
     ))}
-  </div>
+  </div> */}
 </section>
 
 
