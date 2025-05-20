@@ -12,7 +12,7 @@ export default function Contact() {
     setIsSending(true);
 
     emailjs
-      .sendForm("service_y4md3ut", "template_e9tfx4i", form.current, "9yptULX8JJv5kdRYc")
+      .sendForm("service_y4md3ut", "template_r1ohrxa", form.current, "9yptULX8JJv5kdRYc")
       .then(
         (result) => {
           console.log(result.text);
