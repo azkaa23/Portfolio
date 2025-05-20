@@ -55,14 +55,15 @@ const projects = [
       notes: []
     },
     {
-      "id": 3,
-      "name": "SIMPKL",
-      "description": "PKL Management Information System that helps schools manage student PKL process efficiently and integrated (Team Project)",
-      "image": "/admin.png",
-      "featured": true,
-      "tech": ["laravel", "bootstrap"],
-      "source": "https://github.com/abduljabar0606/SIMPKL",
-      "features": [
+      id: 3,
+      name: "SIMPKL",
+      description: "PKL Management Information System that helps schools manage student PKL process efficiently and integrated (Team Project)",
+      image: "/admin.png",
+      featured: true,
+      tech: ["laravel", "bootstrap"],
+      source: "https://github.com/abduljabar0606/SIMPKL",
+      isTeamProject: true,
+      features: [
         { "role": "Siswa", "page": "Absensi", "description": "Melakukan check-in dan check-out harian secara digital." },
         { "role": "Siswa", "page": "Jurnal Harian", "description": "Mengisi jurnal kegiatan setiap hari selama PKL." },
         { "role": "Superadmin", "page": "Pendaftaran Siswa", "description": "Membuat akun siswa beserta detail program dan lokasi PKL." },
@@ -74,23 +75,10 @@ const projects = [
         { "role": "Perusahaan", "page": "Catatan", "description": "Memberikan feedback terkait kinerja siswa PKL, yang dikirim ke pembimbing." },
         { "role": "Pembimbing", "page": "Monitoring", "description": "Memantau dan memvalidasi absensi serta jurnal siswa secara rutin." }
       ],
-      "setup": [
-        { "step": "1. Clone the repository", "command": "git clone https://github.com/azkaa23/simpkl.git\ncd simpkl" },
-        { "step": "2. Install PHP dependencies", "command": "composer install" },
-        { "step": "3. Create environment file", "command": "cp .env.example .env" },
-        { "step": "4. Generate application key", "command": "php artisan key:generate" },
-        {
-          "step": "5. Configure database",
-          "description": "Edit the .env file with your database credentials:\nDB_CONNECTION=mysql\nDB_HOST=127.0.0.1\nDB_PORT=3306\nDB_DATABASE=laravel\nDB_USERNAME=sim_pkl\nDB_PASSWORD="
-        },
-        { "step": "6. Run database migrations", "command": "php artisan migrate" },
-        { "step": "7. (Optional) Seed database with sample data", "command": "php artisan db:seed" },
-        { "step": "8. Start development server", "command": "php artisan serve" }
+      setup: [
       ],
-      "notes": [
-        "Pastikan PHP (^8.0), Composer, dan MySQL sudah terinstall.",
-        "Buat database kosong terlebih dahulu sebelum menjalankan migrasi.",
-        "Akses aplikasi di http://localhost:8000"
+      notes: [
+       
       ]
     },    
     {

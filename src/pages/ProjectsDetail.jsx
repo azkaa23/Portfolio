@@ -70,15 +70,24 @@ export default function ProjectDetail() {
           </div>
 
           <div className="flex items-center gap-4 text-sm text-gray-700 dark:text-gray-300">
-            <a
-              href={project.source}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 hover:underline"
-            >
-              <Github size={16} />
-              Source Code
-            </a>
+              {project.isTeamProject ? (
+                <div className="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400 italic">
+                  Source code tidak tersedia untuk proyek tim.
+                </div>
+              ) : (
+                project.source && (
+                  <a
+                    href={project.source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 hover:underline"
+                  >
+                    <Github size={16} />
+                    Source Code
+                  </a>
+                )
+            )}
+
 
             {hasFrontend && project.demo && (
               <>
@@ -194,19 +203,6 @@ export default function ProjectDetail() {
             </ul> 
           </div>
         )}
-
-        <p className="mt-6 text-sm text-gray-700 dark:text-gray-400">
-          Open{" "}
-          <a
-            href="http://localhost:8000"
-            className="text-blue-500 hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            http://localhost:8000
-          </a>{" "}
-          with your browser to see the result.
-        </p>
       </div>
     </div>
   );

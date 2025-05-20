@@ -121,9 +121,8 @@ export default function About() {
 </section>
 
 
-      <section className="mt-10 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg dark:shadow-md max-w-4xl">
-  {/* TikTok  */}
-  {/* <div className="flex flex-col items-center text-center mb-8">
+      {/* <section className="mt-10 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg dark:shadow-md max-w-4xl">
+      <div className="flex flex-col items-center text-center mb-8">
     <img
       src="/profil.jpg" // Ganti dengan path foto profil kamu
       alt="Profile"
@@ -168,8 +167,8 @@ export default function About() {
         </div>
       </a>
     ))}
-  </div> */}
-</section>
+  </div>
+</section> */}
 
 
     </div>
