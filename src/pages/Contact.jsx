@@ -5,7 +5,7 @@ import emailjs from "@emailjs/browser";
 export default function Contact() {
   const form = useRef();
   const [isSending, setIsSending] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [toast, setToast] = useState({ show: false, message: "", type: "success" });
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -13,27 +13,40 @@ export default function Contact() {
 
     emailjs
       .sendForm("service_y4md3ut", "template_r1ohrxa", form.current, "9yptULX8JJv5kdRYc")
-      .then(
-        (result) => {
-          console.log(result.text);
-          setSuccess(true);
-          form.current.reset();
-        },
-        (error) => {
-          console.error(error.text);
-        }
-      )
-      .finally(() => setIsSending(false));
+      .then(() => {
+        form.current.reset();
+        setToast({
+          show: true,
+          message: "✅ Message sent successfully!",
+          type: "success",
+        });
+      })
+      .catch(() => {
+        setToast({
+          show: true,
+          message: "❌ Failed to send message. Please try again.",
+          type: "error",
+        });
+      })
+      .finally(() => {
+        setIsSending(false);
+        setTimeout(() => {
+          setToast({ show: false, message: "", type: "success" });
+        }, 4000);
+      });
   };
+
   return (
     <div className="w-full max-w-screen-xl mx-auto px-4 py-10 space-y-12">
       <div className="w-4/5">
+        {/* Heading */}
         <div>
           <h2 className="text-3xl font-bold mb-2">Contact</h2>
           <p className="text-gray-600 dark:text-gray-300 mb-6">Let's get in touch</p>
           <hr className="border-gray-300 dark:border-gray-700" />
         </div>
 
+        {/* Contact Cards */}
         <div>
           <p className="text-lg font-semibold mb-3 mt-3">Find me on</p>
 
@@ -66,6 +79,7 @@ export default function Contact() {
           </div>
         </div>
 
+        {/* Contact Form */}
         <div>
           <p className="text-lg font-semibold mb-3 mt-3">Or send me a message</p>
           <form
@@ -104,10 +118,18 @@ export default function Contact() {
               <Mail size={16} />
               {isSending ? "Sending..." : "Send Email"}
             </button>
-            {success && (
-              <p className="text-green-600 dark:text-green-400 mt-2 text-center">
-                ✅ Message sent successfully!
-              </p>
+
+            {/* Toast under button */}
+            {toast.show && (
+              <div
+                className={`mt-4 text-center px-4 py-3 rounded-lg text-sm font-medium transition-opacity duration-300 ${
+                  toast.type === "success"
+                    ? "bg-green-100 text-green-800 border border-green-400"
+                    : "bg-red-100 text-red-800 border border-red-400"
+                }`}
+              >
+                {toast.message}
+              </div>
             )}
           </form>
         </div>
