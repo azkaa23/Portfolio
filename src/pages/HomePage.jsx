@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import blogPosts from "../data/blogPosts";
+import { useNavigate } from "react-router-dom";
 
 export function HomePage() {
   const roles = [
@@ -67,10 +69,10 @@ export function HomePage() {
       title: "UI/UX Design",
       desc: "Design stunning user experiences.",
       tag: "design",
-      img: "/service-uiux.png", 
+      img: "/service-uiux.png",
     },
   ];
-
+  const navigate = useNavigate(); 
   return (
     <div className="w-full max-w-screen-2xl pb-14 mx-auto space-y-12 px-4 overflow-x-hidden">
     <div className="w-4/5">
@@ -96,31 +98,40 @@ export function HomePage() {
 
       {/* Latest Articles */}
       <section>
-        <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6 mt-6">📚 Latest Articles</h2>
+  <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6 mt-6">
+    📚 Latest Articles
+  </h2>
+  <div
+    ref={scrollRef}
+    className="overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing"
+    onMouseDown={handleMouseDown}
+    onMouseMove={handleMouseMove}
+    onMouseUp={handleMouseUp}
+    onMouseLeave={handleMouseUp}
+  >
+    <div className="flex gap-4 max-w-4xl px-1">
+      {blogPosts.slice(0, 5).map((post) => (
         <div
-          ref={scrollRef}
-          className="overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing"
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
+          key={post.id}
+          onClick={() => navigate(`/blog/${post.id}`)}
+          className="bg-white dark:bg-gray-800 w-[300px] flex-shrink-0 p-4 rounded-lg shadow cursor-pointer hover:shadow-lg transition"
         >
-          <div className="flex gap-4 max-w-4xl px-1">
-          {[...Array(10)].slice(0, 5).map((_, i) => (
-              <div
-                key={i}
-                className="bg-white dark:bg-gray-800 w-[300px] flex-shrink-0 p-4 rounded-lg shadow"
-              >
-                <div className="h-40 bg-gray-100 dark:bg-gray-700 mb-2 rounded" />
-                <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
-                  Article #{i + 1}
-                </h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">Apr 23, 2025</p>
-              </div>
-            ))}
-          </div>
+          <img
+            src={post.image}
+            alt={post.title}
+            className="h-40 w-full object-cover rounded mb-2"
+          />
+          <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
+            {post.title}
+          </h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            {post.date} • {post.comments} Comment
+          </p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Services */}
       <section className="mt-12 max-w-6xl">
@@ -131,7 +142,7 @@ export function HomePage() {
           {services.map((service, i) => (
             <div
               key={i}
-              className="relative bg-white dark:bg-gray-800 p-6 rounded-lg border shadow transition group hover:shadow-lg duration-300"
+              className="relative bg-white dark:bg-gray-800 p-6 rounded-lg transition group hover:shadow-lg duration-300"
             >
               <span className="absolute top-3 right-3 text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-300 px-2 py-1 rounded-full">
                 {service.tag}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+
 import {
   Sun,
   Moon,
@@ -18,13 +19,13 @@ import {
 
 export function Sidebar({ darkMode, setDarkMode }) {
   const [isHovered, setIsHovered] = useState(false);
-
+  const [liked, setLiked] = useState(false);
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
   const menus = [
     { icon: Home, label: "Home", to: "/" },
     { icon: Leaf, label: "About", to: "/about" },
-    // { icon: Pencil, label: "Blog", to: "/blog" },
+    { icon: Pencil, label: "Blog", to: "/blog" },
     { icon: Briefcase, label: "Projects", to: "/projects" },
     // { icon: GitBranch, label: "Roadmap", to: "/roadmap" },
     // { icon: LayoutDashboard, label: "Task Board", to: "/tasks" },
@@ -153,8 +154,26 @@ export function Sidebar({ darkMode, setDarkMode }) {
 
       {/* BOTTOM ICON */}
       <div className="pb-6 flex justify-center mt-auto">
-        <Heart className="text-red-500" />
+        <button
+          onClick={() => {
+            setLiked(!liked);
+            if (!liked) {
+              alert("Thanks for the love! ❤️");
+            }
+          }}
+          className={`p-2 rounded-full transition-all duration-300 
+            ${liked ? "bg-red-100 shadow-inner" : "hover:bg-gray-100 dark:hover:bg-gray-800"}
+            active:scale-110`}
+          aria-label="Like"
+        >
+          <Heart
+            className={`w-6 h-6 transition-all duration-300
+              ${liked ? "text-red-500 fill-red-500 drop-shadow-md" : "text-gray-400"}
+            `}
+          />
+        </button>
       </div>
+
     </aside>
   );
 }

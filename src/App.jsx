@@ -6,6 +6,8 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import ProjectsDetail from './pages/ProjectsDetail'; 
 import Contact from './pages/Contact';
+import Blog from './pages/Blog';
+import BlogDetail from './pages/BlogDetail'
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -22,6 +24,8 @@ export default function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/projects/:id" element={<ProjectsDetail />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/blog" element={<Blog />}/>
+              <Route path="/blog/:id" element={<BlogDetail />}/>
             </Routes>
           </main>
         </div>

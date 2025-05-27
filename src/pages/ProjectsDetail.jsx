@@ -11,7 +11,7 @@ const techIcons = {
   js: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
 };
 
-const frontendStacks = ["js", "ts", "react", "vue", "bootstrap"];
+const frontendStacks = ["js", "ts", "react", "vue"];
 
 export default function ProjectDetail() {
   const { id } = useParams();
