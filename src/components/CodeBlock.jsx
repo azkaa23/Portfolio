@@ -17,9 +17,7 @@ export default function CodeBlock({ code, language = "javascript", darkMode = fa
       <div className={`flex items-center justify-between px-4 py-2 ${
         darkMode ? "bg-gray-700 text-gray-300" : "bg-gray-200 text-gray-700"
       }`}>
-        <div className="text-sm font-mono">
-          {language}
-        </div>
+        <div className="text-sm font-mono">{language}</div>
         <button
           onClick={handleCopy}
           className={`text-xs px-3 py-1 rounded flex items-center space-x-1 ${
